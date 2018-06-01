@@ -4,6 +4,21 @@
     <title>Date input example</title>
     <meta charset="utf-8"/>
 
+    <style type="text/css">
+        input {
+            width: 200px;
+            height: 2em;
+            border: 1px solid white;
+        }
+        label.error {
+            margin-left: 5px;
+            color: red;
+        }
+        input.error {
+            border: 1px dotted red;
+        }
+    </style>
+
     <!--CSS for datepicker component-->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
@@ -11,8 +26,18 @@
 
 <div class="container">
     <div class="input-group">
-        <label for="date">Date</label>
-        <input type="text" class="date" id="date" autocomplete="off"/>
+        <form id="myForm" action="index.html">
+            <label for="name">Název</label>
+            <input type="text" class="text-field" id="name" title="Zadejte název..." required/>
+            <br>
+            <label for="date">Datum</label>
+            <input type="text" class="date" id="date" autocomplete="off" title="Zadejte datum ve správném formátu..." required/>
+            <br>
+            <label for="email">E-mail</label>
+            <input type="text" class="email" id="email" autocomplete="off" title="Zadejte platnou e-mail adresu..." required/>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </div>
 
@@ -22,6 +47,7 @@
 <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <!--JQuery date mask script-->
 <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript">
     $(function () {
         // Set mask for date input
@@ -29,6 +55,7 @@
         $('.date')
             .mask('00.00.0000', {placeholder: "__.__.____"})
             .datepicker({dateFormat: "dd.mm.yy"});
+        $("#myForm").validate();
     });
 </script>
 </body>
