@@ -22,11 +22,11 @@
 <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <!--JQuery date mask script-->
 <script type="text/javascript" src="js/jquery.mask.min.js"></script>
-<script>
+<script type="text/javascript">
     $(function () {
         // Set mask for date input
         // Set datapicker support with date format for date input
-        $('#date')
+        $('.date')
             .mask('00.00.0000', {placeholder: "__.__.____"})
             .datepicker({dateFormat: "dd.mm.yy"});
     });
