@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date input example</title>
+    <meta charset="utf-8"/>
+
+    <!--CSS for datepicker component-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="input-group">
+        <label for="date">Date</label>
+        <input type="text" class="date" id="date" autocomplete="off"/>
+    </div>
+</div>
+
+<!--Basic JQuery library from CDN-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<!--JQuery UI support for datepicker component from CDN-->
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!--JQuery date mask script-->
+<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+<script>
+    $(function () {
+        // Set mask for date input
+        // Set datapicker support with date format for date input
+        $('#date')
+            .mask('00.00.0000', {placeholder: "__.__.____"})
+            .datepicker({dateFormat: "dd.mm.yy"});
+    });
+</script>
+</body>
+</html>
